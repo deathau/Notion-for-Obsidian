@@ -686,7 +686,7 @@ ol>li {
 }
 
 .workspace-leaf-content[data-type=markdown] {
-  overflow: auto;
+  overflow: 100%;
   position: unset;
   margin-top: 35px;
 }
@@ -694,7 +694,7 @@ ol>li {
 .workspace-leaf-content[data-type=markdown] .view-header-title-container {
   width: 100%;
   margin-top: auto;
-  height: auto;
+  height: 100%;
   padding: 0;
 }
 
@@ -706,7 +706,7 @@ ol>li {
   font-size: 40px;
   line-height: 1.2em;
   padding: 3px 2px;
-  height: auto;
+  height: 100%;
   margin: 0;
   color: var(--text-normal);
   white-space: normal;
@@ -728,7 +728,7 @@ ol>li {
 }
 
 .workspace-leaf-content[data-type=markdown] .view-content {
-  height: auto;
+  height: 100%;
 }
 
 .workspace-leaf-content[data-type=markdown] .markdown-source-view {
@@ -790,6 +790,14 @@ ol>li {
 .markdown-source-view,
 .workspace-split.mod-root .view-content {
   position: unset;
+}
+
+/* 0.9.20 fix — otherwise scrollbar covers the header and makes it unclickable  
+  There is some z-depth fuckery that I don't know how to fix properly 
+  !important because source 100% is inline css
+  */
+.CodeMirror-vscrollbar{
+    width: auto !important
 }
 
 /* 8. Tags */
